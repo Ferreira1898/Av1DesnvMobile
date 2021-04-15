@@ -27,7 +27,7 @@ export default function faq(){
             <Image style={styles.imagem} source={logoImg}/>
             <Text style={styles.tituloPerfil}>Perguntas Frequentes</Text>
             <FlatList
-            data={[1,]}
+            data={[1]}
             //style={styles.corpoPerguntas}
             keyExtractor={faq =>String(faq)}
             showsVerticalScrollIndicator={false}
@@ -59,6 +59,38 @@ export default function faq(){
                 title="Leia Mais +"
                  onPress={() => Alert.alert('Simple Button pressed')}
                         />
+                        <Text style={styles.title}>
+                        Quais são os grupos prioritários e quais critérios foram adotados para selecionar esses grupos?
+             </Text>
+
+              <Button
+                title="Leia Mais +"
+                 onPress={() => Alert.alert('Simple Button pressed')}
+                        />
+                        <Text style={styles.title}>Onde as vacinas serão aplicadas?
+                                     </Text>
+
+              <Button
+                title="Leia Mais +"
+                 onPress={() => Alert.alert('Simple Button pressed')}
+                        />
+            <Text style={styles.title}>
+            Depois de vacinado, tenho que continuar usando máscara? Por quê?
+             </Text>
+
+              <Button
+                title="Leia Mais +"
+                 onPress={() => Alert.alert('Simple Button pressed')}
+                        />
+            <Text style={styles.title}>
+            Há risco de infecção pela vacina?           </Text>
+
+              <Button
+                title="Leia Mais +"
+                 onPress={() => Alert.alert('Simple Button pressed')}
+                        />
+                  
+              
              </View>
            )}  />
 
