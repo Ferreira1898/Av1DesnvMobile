@@ -14,38 +14,31 @@ export default StyleSheet.create({
         width:80,
         height:80,
         padding:20,
-        marginTop:-50,
+        marginTop:10,
         marginBottom:8,
     },
     tituloPerfil:{
-        width:'100%',
-        height:40,
-        flexDirection:'row',
+        fontSize: 24,
+        marginBottom: 16,
+        marginTop: 20,
+        color: "#6C63FF",
+        fontWeight: "bold",
         borderRadius:8,
         backgroundColor:'#FFF',
-        fontSize:24,
-        color:'#6C63FF',
-        fontWeight:'bold',
-        justifyContent:'center',
-        alignItems:'center',
-        paddingLeft:50,
     },
     faq:{
         color:'#FFF',
         fontWeight:'bold',
         justifyContent:'center',
         alignItems:'center',
-        marginTop:50,
+        marginTop:5,
 
     },
     botão:{
         width: '50%',
         height:40,
     },
-    scrollView: {
-        backgroundColor: '#FFF',
-        marginHorizontal: 20,
-      },
+
       title:{
         borderRadius:8,
         backgroundColor:'#FFF',
@@ -57,7 +50,7 @@ export default StyleSheet.create({
         justifyContent:'space-between',
         alignItems:'center',
         marginLeft:260,
-        marginTop:-150,
+        marginTop:5,
        
     },
     detailsButtonText:{
@@ -66,5 +59,8 @@ export default StyleSheet.create({
         fontWeight:'bold',
         
         
+    },
+    corpoPerguntas:{
+        marginTop:5,
     },
 })
