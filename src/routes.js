@@ -8,6 +8,7 @@ import {createStackNavigator} from '@react-navigation/stack';
  import login from './pages/login';
  import perfil from './pages/perfil';
  import faq from './pages/faq';
+ import retrieve from './pages/retrieve';;
 
 export default function Routes(){
     return(
@@ -17,6 +18,7 @@ export default function Routes(){
                 <AppStack.Screen name="perfil" component={perfil}/>
                 <AppStack.Screen name="cadastro" component={cadastro}/>
                 <AppStack.Screen name="faq" component={faq}/>
+                <AppStack.Screen name="retrieve" component={retrieve}/>
             </AppStack.Navigator>
         </NavigationContainer>
     );

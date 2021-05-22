@@ -4,7 +4,7 @@ import {Feather} from '@expo/vector-icons';
 import {useNavigation} from '@react-navigation/native';
 import {Text,View,Image,TextInput,TouchableOpacity, } from 'react-native';
 import styles from './styles';
-import logoImg from '../../assets/logo1.png';
+import logoImg from '../../assets/logo3.png';
 
 export default function Login(){
     const navigation= useNavigation();
@@ -17,10 +17,15 @@ export default function Login(){
     
     function navigateToPerfil(){
       navigation.navigate('perfil');
-  }
+    }
+
+    function navigateToRetrieve(){
+      navigation.navigate('retrieve');
+    }
     
     return(
-        <View style={styles.container} >
+      <View style={styles.container} >
+        <View style={styles.InnerContainer} >
               <StatusBar hidden />
             <View style={styles.header}>
               <Text style={styles.tituloLogin}>CalenVac</Text>
@@ -38,7 +43,12 @@ export default function Login(){
              <Text style={styles.detailsButtonText}>Cadastre-se aqui</Text>
                <Feather name="arrow-right" size={15}  color="white" />
         </TouchableOpacity>
+        <TouchableOpacity style={styles.retrieveAcessButton} onPress={navigateToRetrieve}>
+             <Text style={styles.retrieveAcessText}>Recuperar acesso</Text>
+               <Feather name="arrow-right" size={15}  color="white" />
+        </TouchableOpacity>
 
+        </View>
         </View>
 
        
