@@ -5,38 +5,43 @@ import { useNavigation } from "@react-navigation/native";
 import { Text, View, Image, TextInput, TouchableOpacity } from "react-native";
 import styles from "./styles";
 
-export default function Retrieve() {
+export default function Send() {
   const navigation = useNavigation();
   const [nome, setNome] = useState("");
 
   function navigateToLogin() {
     navigation.navigate("login");
   }
-  function navigateToSend() {
-    navigation.navigate("send");
+  
+  function navigateToRetrieve(){
+    navigation.navigate('retrieve');
   }
 
   return (
     <View style={styles.container}>
       <View style={styles.InnerContainer}>
         <StatusBar hidden />
-        <View style={styles.header}>
-          <Text style={styles.tituloLogin}>Recuperar acesso:</Text>
-        </View>
+        <Text style={styles.tituloLogin}>Defina uma nova senha:</Text>
         <View style={styles.box}>
-          <Text style={styles.texto}>Seu login: </Text>
+          <Text style={styles.texto}>Nova senha: </Text>
           <TextInput
-            placeholder="Nome  "
+            placeholder="Nova senha"
+            style={styles.textInput}
+            onChangeText={(text) => setNome(text)}
+          />
+          <Text style={styles.texto}>Confirme sua nova senha: </Text>
+          <TextInput
+            placeholder="Nova senha"
             style={styles.textInput}
             onChangeText={(text) => setNome(text)}
           />
         </View>
-        <TouchableOpacity style={styles.btnLogin} onPress={navigateToSend}>
-          <Text style={styles.textoLogin}>Enviar email de recuperação</Text>
+        <TouchableOpacity style={styles.btnLogin} onPress={navigateToLogin}>
+          <Text style={styles.textoLogin}>Confirmar</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.detailsButton}
-          onPress={navigateToLogin}
+          onPress={navigateToRetrieve}
         >
           <Text style={styles.detailsButtonText}>Cancelar</Text>
           <Feather name="arrow-right" size={15} color="white" />

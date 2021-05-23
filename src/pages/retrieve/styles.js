@@ -29,10 +29,7 @@ export default StyleSheet.create({
         fontSize:24,
         color:'#6C63FF',
         fontWeight:'bold',
-        marginTop:-10,
-        paddingLeft:30,
-        
-
+        marginBottom:50,
     },
     header: {
         flexDirection:'row',
@@ -55,12 +52,13 @@ export default StyleSheet.create({
         fontWeight:'bold',
         marginVertical:20,
         backgroundColor:'white',
-        
     },
     texto:{
         color:'#6C63FF',
-        fontWeight:'bold',
-        marginRight:200,
+        fontWeight:'bold'    
+    },
+    box:{
+        alignItems :'flex-start'
     },
   textInput:{
         marginTop:5,
