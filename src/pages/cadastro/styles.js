@@ -3,72 +3,102 @@ import Constants from 'expo-constants';
 
 export default StyleSheet.create({
     container: {
-      flex: 1,
-      backgroundColor: '#6C63FF',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding:20,
-      
+        flex: 1,
+        backgroundColor: '#6C63FF',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding:20,
     },
+
+    InnerContainer: {
+        flex: 1,
+        backgroundColor: "#FFF",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: 20,
+        bottom: "5%",
+        borderRadius: 16,
+        maxHeight:"90%",
+    },
+
     header: {
-        flexDirection:'row',
-        justifyContent:'space-between',
+        justifyContent:'center',
         alignItems:'center',
     },
-    textHeader:{
-        width:'80%',
-        height:40,
+    
+    textHeader: {
         fontSize:24,
         color:'#6C63FF',
         fontWeight:'bold',
-        backgroundColor:'white',
-        borderRadius:20,
-        marginTop:30,
-        justifyContent:'center',
-        alignItems:'center',
-        paddingLeft:80,
+        borderWidth:1,
+        borderColor:'#6C63FF',
+        borderRadius:15,
+        paddingHorizontal:80,
+        paddingVertical:10,
+        top:100,
     },
-    textoH:{
-        color:'#FFF',
+
+    textoH: {
+        color:'#6C63FF',
         fontWeight:'bold',
-        marginRight:240,
-
 
     },
-    textInput:{
-        width:'100%',
-        height:40,
-        backgroundColor:'white',
-        borderRadius:20,
-        paddingLeft:10,
-       
-     },
-     btnCadastro:{
-        width:'50%',
+
+    textInput: {
+        marginTop:5,
+        width:300,
         height:40,
         backgroundColor:'#FFF',
+        borderColor:'#6C63FF',
+        borderWidth: 2,
         borderRadius:20,
-        marginTop:8,
-        justifyContent:'center',
-        alignItems:'center',
-     },
-     texto:{
-         color:'#6C63FF',
-         fontSize:20,
-        fontWeight:'bold',
+        paddingLeft:10,
+        marginBottom:20,
      },
 
-     detailsButton:{
+    btnCadastro: {
+        borderColor:'#6C63FF',
+        borderWidth: 2,        
+        borderRadius:9,
+        paddingHorizontal: 40,
+        paddingVertical: 10,
+        backgroundColor:'#FFF',
+
+        justifyContent:'center',
+        alignItems:'center',
+    },
+
+    texto: {
+        color:'#6C63FF',
+        fontSize:20,
+        fontWeight:'bold',
+    },
+
+    detailsButton: {
         flexDirection:'row',
         justifyContent:'space-between',
         alignItems:'center',
     
     },
-    detailsButtonText:{
+
+    detailsButtonText: {
         color:'#FFF',
         fontSize:15,
         fontWeight:'bold',
 
     },
+
+    infoBox: {
+        borderColor: '#6C63FF',
+        borderRadius: 5,
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'flex-start',
+    },
   
+    imgInfo: {
+        width: 40,
+        height: 40,
+        alignItems: 'flex-end'
+    }
   });
