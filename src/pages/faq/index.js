@@ -14,11 +14,14 @@ import {
 import styles from "./styles";
 import logoImg from "../../assets/faq.png";
 import addImg from "../../assets/add.png";
+import { faqModel } from "../../data/faq/faqModel.js";
+import {detailsOptions} from "../../components/detailOptions/detailOptions.js";
 
 export default function faq() {
   const [faq, setFaq] = useState([]);
   const [state, setState] = useState([false]);
   const navigation = useNavigation();
+  const [optionView, setOptionView] = useState<string>("[]");
 
   function navigateToPerfil() {
     navigation.navigate("perfil");
@@ -44,34 +47,9 @@ export default function faq() {
           <Text style={styles.tituloPerfil}>Perguntas Frequentes</Text>
         </View>
         <View style={styles.Questionsheader}>
-          <View style={styles.corpoPerguntas}>
-            <Text style={styles.title} onPress={toggleStatus}>
-              As vacinas atuais protegem contra as novas variantes de
-              coronavírus, como as linhagens de Manaus e do Reino Unido?
-            </Text>
-            <View>
-              {!state ? <Text style={styles.answer}>sla irmão </Text> : null}
-            </View>
-          </View>
-          <View style={styles.corpoPerguntas}>
-            <Text style={styles.title} onPress={toggleStatus}>
-              A vacina contra a Covid-19 já está disponível? Já posso me
-              vacinar?{" "}
-            </Text>
-            <View>
-              {!state ? <Text style={styles.answer}>Sim</Text> : null}
-            </View>
-          </View>
-          <View style={styles.corpoPerguntas}>
-            <Text style={styles.title} onPress={toggleStatus}>
-              Apenas as pessoas dos grupos prioritários serão imunizadas?{" "}
-            </Text>
-            <View>
-              {!state ? (
-                <Text style={styles.answer}>Talvez nem eles</Text>
-              ) : null}
-            </View>
-          </View>
+          {faqModel.map((value) => {
+            return(<detailsOptions />)
+          })}
         </View>
         <Image style={styles.add} source={addImg} />
       </View>
