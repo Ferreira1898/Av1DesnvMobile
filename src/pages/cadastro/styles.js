@@ -7,7 +7,6 @@ export default StyleSheet.create({
         backgroundColor: '#6C63FF',
         alignItems: 'center',
         justifyContent: 'center',
-        padding:20,
     },
 
     InnerContainer: {
@@ -16,44 +15,48 @@ export default StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         padding: 20,
-        bottom: "5%",
-        borderRadius: 16,
-        maxHeight:"90%",
+        borderWidth: 1,
+        borderColor: '#e5e5e5',
+        borderRadius: 15,
+        maxHeight:"95%",
+        maxWidth:"95%",
     },
 
     header: {
-        justifyContent:'center',
-        alignItems:'center',
+        borderWidth: 2,
+        borderColor: '#6C63FF',
+        borderRadius: 15,
+        flexDirection:'row',
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+        paddingVertical: 10,
+        paddingHorizontal: 80,
+        bottom: 15,
     },
     
     textHeader: {
         fontSize:24,
         color:'#6C63FF',
         fontWeight:'bold',
-        borderWidth:1,
-        borderColor:'#6C63FF',
-        borderRadius:15,
-        paddingHorizontal:80,
-        paddingVertical:10,
-        top:100,
     },
 
     textoH: {
         color:'#6C63FF',
         fontWeight:'bold',
-
+        top:12,
     },
 
     textInput: {
-        marginTop:5,
-        width:300,
+        width:220,
         height:40,
         backgroundColor:'#FFF',
         borderColor:'#6C63FF',
         borderWidth: 2,
-        borderRadius:20,
+        borderRadius:12,
+        marginTop:2,
         paddingLeft:10,
         marginBottom:20,
+        left:20,
      },
 
     btnCadastro: {
@@ -63,9 +66,9 @@ export default StyleSheet.create({
         paddingHorizontal: 40,
         paddingVertical: 10,
         backgroundColor:'#FFF',
-
         justifyContent:'center',
         alignItems:'center',
+        top: 22,
     },
 
     texto: {
@@ -78,11 +81,11 @@ export default StyleSheet.create({
         flexDirection:'row',
         justifyContent:'space-between',
         alignItems:'center',
-    
+        top: 25,
     },
 
     detailsButtonText: {
-        color:'#FFF',
+        color:'#6C63FF',
         fontSize:15,
         fontWeight:'bold',
 
@@ -94,11 +97,22 @@ export default StyleSheet.create({
         flexDirection:'row',
         justifyContent:'space-between',
         alignItems:'flex-start',
+        right:20,
     },
   
     imgInfo: {
-        width: 40,
-        height: 40,
-        alignItems: 'flex-end'
-    }
+        width:30,
+        height:30,
+        marginLeft:20,
+    },
+
+    registerBox: {
+        top:20,
+    },
+
+    iconHelp: {
+        left:320,
+        top:12,
+        position:"absolute",
+    },
   });
