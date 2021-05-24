@@ -25,13 +25,11 @@ export default function Send() {
         <View style={styles.box}>
           <Text style={styles.texto}>Nova senha: </Text>
           <TextInput
-            placeholder="Nova senha"
             style={styles.textInput}
             onChangeText={(text) => setNome(text)}
           />
           <Text style={styles.texto}>Confirme sua nova senha: </Text>
           <TextInput
-            placeholder="Nova senha"
             style={styles.textInput}
             onChangeText={(text) => setNome(text)}
           />

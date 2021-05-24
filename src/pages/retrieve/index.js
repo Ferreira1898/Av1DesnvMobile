@@ -24,15 +24,15 @@ export default function Retrieve() {
           <Text style={styles.tituloLogin}>Recuperar acesso:</Text>
         </View>
         <View style={styles.box}>
-          <Text style={styles.texto}>Seu login: </Text>
+          <Text style={styles.texto}>Seu celular: </Text>
           <TextInput
-            placeholder="Nome  "
+            placeholder="(00) 00000-0000"
             style={styles.textInput}
             onChangeText={(text) => setNome(text)}
           />
         </View>
         <TouchableOpacity style={styles.btnLogin} onPress={navigateToSend}>
-          <Text style={styles.textoLogin}>Enviar email de recuperação</Text>
+          <Text style={styles.textoLogin}>Enviar SMS de recuperação</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.detailsButton}
