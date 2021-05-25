@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "../../pages/faq/styles";
-
+/*
 const detailOptions = props =>{
     return(<View style={styles.corpoPerguntas}>
         <Text style={styles.title} onPress={props.toggleStatus}>
@@ -15,3 +15,4 @@ const detailOptions = props =>{
 }
 
 export default detailOptions();
+*/

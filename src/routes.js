@@ -10,6 +10,7 @@ import {createStackNavigator} from '@react-navigation/stack';
  import faq from './pages/faq';
  import retrieve from './pages/retrieve';
  import send from './pages/retrieve/send.js';
+ import home from './pages/home';
 
 export default function Routes(){
     return(
@@ -21,6 +22,7 @@ export default function Routes(){
                 <AppStack.Screen name="faq" component={faq}/>
                 <AppStack.Screen name="retrieve" component={retrieve}/>
                 <AppStack.Screen name="send" component={send}/>
+                <AppStack.Screen name="home" component={home}/>
             </AppStack.Navigator>
         </NavigationContainer>
     );

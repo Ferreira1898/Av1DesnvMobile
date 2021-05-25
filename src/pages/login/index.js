@@ -15,8 +15,8 @@ export default function Login(){
         navigation.navigate('cadastro');
     }
     
-    function navigateToPerfil(){
-      navigation.navigate('perfil');
+    function navigateToHome(){
+      navigation.navigate('home');
     }
 
     function navigateToRetrieve(){
@@ -36,7 +36,7 @@ export default function Login(){
             <Text style={styles.texto}>Senha: </Text>
               <TextInput placeholder="Senha  " style={styles.textInput} onChangeText={text =>setNome(text)} />
 
-         <TouchableOpacity style={styles.btnLogin} onPress={navigateToPerfil}>
+         <TouchableOpacity style={styles.btnLogin} onPress={navigateToHome}>
           <Text style={styles.textoLogin}>Login</Text>
          </TouchableOpacity>
          <TouchableOpacity style={styles.detailsButton} onPress={navigateToCadastro}>
