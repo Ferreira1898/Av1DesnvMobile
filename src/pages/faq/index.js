@@ -17,11 +17,11 @@ import addImg from "../../assets/add.png";
 import { faqModel } from "../../data/faq/faqModel.js";
 import {detailsOptions} from "../../components/detailOptions/detailOptions.js";
 
-export default function faq() {
+export function Faq() {
   const [faq, setFaq] = useState([]);
   const [state, setState] = useState([false]);
   const navigation = useNavigation();
-  const [optionView, setOptionView] = useState<string>("[]");
+  //const [optionView, setOptionView] = useState<string>("[]");
 
   function navigateToPerfil() {
     navigation.navigate("perfil");
@@ -46,13 +46,17 @@ export default function faq() {
           <Image style={styles.imagem} source={logoImg} />
           <Text style={styles.tituloPerfil}>Perguntas Frequentes</Text>
         </View>
+        {/*
         <View style={styles.Questionsheader}>
           {faqModel.map((value) => {
             return(<detailsOptions />)
           })}
         </View>
+        */}
         <Image style={styles.add} source={addImg} />
       </View>
     </View>
   );
 }
+
+export default Faq;

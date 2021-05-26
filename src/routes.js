@@ -6,8 +6,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 
  import cadastro from './pages/cadastro';
  import login from './pages/login';
- import perfil from './pages/perfil';
- import faq from './pages/faq';
+ import Perfil from './pages/perfil';
+ import Faq from './pages/faq';
  import retrieve from './pages/retrieve';
  import send from './pages/retrieve/send.js';
  import home from './pages/home';
@@ -17,9 +17,9 @@ export default function Routes(){
         <NavigationContainer>
             <AppStack.Navigator screenOptions={{headerShown:false}}>
                 <AppStack.Screen name="login" component={login}/>
-                <AppStack.Screen name="perfil" component={perfil}/>
+                <AppStack.Screen name="Perfil" component={Perfil}/>
                 <AppStack.Screen name="cadastro" component={cadastro}/>
-                <AppStack.Screen name="faq" component={faq}/>
+                <AppStack.Screen name="Faq" component={Faq}/>
                 <AppStack.Screen name="retrieve" component={retrieve}/>
                 <AppStack.Screen name="send" component={send}/>
                 <AppStack.Screen name="home" component={home}/>

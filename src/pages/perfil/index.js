@@ -13,7 +13,7 @@ import {
 import logoImg from "../../assets/campeao.jpg";
 import styles from "./styles";
 
-export default function perfil() {
+export function Perfil(){
   const navigation = useNavigation();
 
   function navigateToLogin() {
@@ -24,7 +24,7 @@ export default function perfil() {
     navigation.navigate("faq");
   }
 
-  return (
+    return (
     <View style={styles.container}>
       <View style={styles.InnerContainer}>
         <StatusBar hidden />
@@ -56,12 +56,14 @@ export default function perfil() {
         </View>
         <TouchableOpacity
           style={styles.detailsFAQButton}
-          onPress={navigateToFAQ}
+          onPress={()=> navigation.navigate('Faq')}
         >
           <Text style={styles.detailsFAQButtonText}>FAQ?</Text>
-          <Feather name="arrow-right" size={16} color="#FFF" />
         </TouchableOpacity>
       </View>
     </View>
   );
 }
+
+export default Perfil;
+
