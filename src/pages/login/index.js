@@ -4,7 +4,7 @@ import {Feather} from '@expo/vector-icons';
 import {useNavigation} from '@react-navigation/native';
 import {Text,View,Image,TextInput,TouchableOpacity, } from 'react-native';
 import styles from './styles';
-import logoImg from '../../assets/logo1.png';
+import logoImg from '../../assets/logo3.png';
 
 export default function Login(){
     const navigation= useNavigation();
@@ -15,12 +15,17 @@ export default function Login(){
         navigation.navigate('cadastro');
     }
     
-    function navigateToPerfil(){
-      navigation.navigate('perfil');
-  }
+    function navigateToHome(){
+      navigation.navigate('home');
+    }
+
+    function navigateToRetrieve(){
+      navigation.navigate('retrieve');
+    }
     
     return(
-        <View style={styles.container} >
+      <View style={styles.container} >
+        <View style={styles.InnerContainer} >
               <StatusBar hidden />
             <View style={styles.header}>
               <Text style={styles.tituloLogin}>CalenVac</Text>
@@ -31,14 +36,19 @@ export default function Login(){
             <Text style={styles.texto}>Senha: </Text>
               <TextInput placeholder="Senha  " style={styles.textInput} onChangeText={text =>setNome(text)} />
 
-         <TouchableOpacity style={styles.btnLogin} onPress={navigateToPerfil}>
+         <TouchableOpacity style={styles.btnLogin} onPress={navigateToHome}>
           <Text style={styles.textoLogin}>Login</Text>
          </TouchableOpacity>
          <TouchableOpacity style={styles.detailsButton} onPress={navigateToCadastro}>
              <Text style={styles.detailsButtonText}>Cadastre-se aqui</Text>
                <Feather name="arrow-right" size={15}  color="white" />
         </TouchableOpacity>
+        <TouchableOpacity style={styles.retrieveAcessButton} onPress={navigateToRetrieve}>
+             <Text style={styles.retrieveAcessText}>Recuperar acesso</Text>
+               <Feather name="arrow-right" size={15}  color="white" />
+        </TouchableOpacity>
 
+        </View>
         </View>
 
        
