@@ -11,11 +11,13 @@ import {createStackNavigator} from '@react-navigation/stack';
  import retrieve from './pages/retrieve';
  import send from './pages/retrieve/send.js';
  import home from './pages/home';
+ import mapa from './pages/mapa';
 
 export default function Routes(){
     return(
         <NavigationContainer>
             <AppStack.Navigator screenOptions={{headerShown:false}}>
+                <AppStack.Screen name="mapa" component={mapa}/>
                 <AppStack.Screen name="login" component={login}/>
                 <AppStack.Screen name="Perfil" component={Perfil}/>
                 <AppStack.Screen name="cadastro" component={cadastro}/>
