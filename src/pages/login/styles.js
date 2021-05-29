@@ -17,7 +17,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 16,
     width:'95%',
-    height:'90%',
+    maxHeight: '98%',
   },
   tituloLogin: {
     width: '50%',
@@ -44,6 +44,7 @@ export default StyleSheet.create({
     marginBottom: 5,
     marginRight: 5,
     resizeMode: 'contain',
+    zIndex: 1,
   },
   textHeader: {
     height: 40,
