@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { StatusBar } from "expo-status-bar";
-import { Feather } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
+import React, { useState } from 'react';
+import { StatusBar } from 'expo-status-bar';
+import { Feather } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 import {
   Text,
   Button,
@@ -10,12 +10,12 @@ import {
   TextInput,
   TouchableOpacity,
   Alert,
-} from "react-native";
-import styles from "./styles";
-import logoImg from "../../assets/faq.png";
-import addImg from "../../assets/add.png";
-import { faqModel } from "../../data/faq/faqModel.js";
-import {detailsOptions} from "../../components/detailOptions/detailOptions.js";
+} from 'react-native';
+import styles from './styles';
+import logoImg from '../../assets/faq.png';
+import addImg from '../../assets/add.png';
+import { faqModel } from '../../data/faq/faqModel.js';
+import { detailsOptions } from '../../components/detailOptions/detailOptions.js';
 
 export function Faq() {
   const [faq, setFaq] = useState([]);
@@ -24,7 +24,7 @@ export function Faq() {
   //const [optionView, setOptionView] = useState<string>("[]");
 
   function navigateToPerfil() {
-    navigation.navigate("perfil");
+    navigation.navigate('perfil');
   }
 
   function toggleStatus() {
@@ -41,7 +41,7 @@ export function Faq() {
             onPress={navigateToPerfil}
           >
             <Text style={styles.detailsButtonText}>Voltar</Text>
-            <Feather name="arrow-right" size={16} color="#6C63FF" />
+            <Feather name='arrow-right' size={16} color='#6C63FF' />
           </TouchableOpacity>
           <Image style={styles.imagem} source={logoImg} />
           <Text style={styles.tituloPerfil}>Perguntas Frequentes</Text>

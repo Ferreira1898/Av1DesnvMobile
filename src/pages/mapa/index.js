@@ -1,30 +1,35 @@
 import React from 'react';
-import {View,Text} from 'react-native';
-import MapView ,{Marker} from 'react-native-maps';
+import { View, Text, ScrollView } from 'react-native';
 import styles from './styles';
+import MapComponent from '../../components/mapComponent/mapComponent.js';
 
-export default function mapa(){
-    return(
-      <View style={styles.container}>
-        <MapView 
-         style={styles.mapaEstilo}
-          initialRegion={{
-          latitude:  -22.743792929481362,
-          longitude: -43.46670102358521,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-        }}
-      >
-          <Marker
-            coordinate={{
-                latitude:  -22.743792929481362,
-                longitude: -43.46670102358521,
-            }}
-            title="Você"
-          />
+export function Map() {
 
-      </MapView>
+  return (
+    <View style={styles.container}>
+      <View style={styles.upperContainer}>
+      <MapComponent/>
       </View>
-    
-    );
+      <View style={styles.innerContainer}>
+        <ScrollView style={styles.infoContainer}>
+          <Text style={styles.title}>Unidade Meier 1</Text>
+          <View style={styles.infoBox}>
+            <Text style={styles.infoTitle}>CAP   CNEES</Text>
+            <Text style={styles.info}>3.1      6664154</Text>
+            <Text style={styles.infoTitle}>Email</Text>
+            <Text style={styles.info}>campeao@gmail.com</Text>
+            <Text style={styles.infoTitle}>Atendimento</Text>
+            <Text style={styles.info}>Seg a sex 7 às 18h</Text>
+            <Text style={styles.infoTitle}>Equipe</Text>
+            <Text style={styles.info}>Bariri</Text>
+            <Text style={styles.infoTitle}>Enfermeiro(a)</Text>
+            <Text style={styles.info}>Jorge Pedroso</Text>
+            <Text style={styles.infoTitle}>Médico(a)</Text>
+            <Text style={styles.info}>Dom Corleone</Text>
+          </View>
+        </ScrollView>
+      </View>
+    </View>
+  );
 }
+  export default Map;

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { StatusBar } from "expo-status-bar";
-import { Feather } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
+import React, { useState } from 'react';
+import { StatusBar } from 'expo-status-bar';
+import { Feather } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 import {
   Text,
   View,
@@ -9,17 +9,17 @@ import {
   TextInput,
   TouchableOpacity,
   Button,
-} from "react-native";
-import styles from "./styles";
-import profileImg from "../../assets/campeao.jpg";
-import bell from "../../assets/Bell.png";
-import marker from "../../assets/NotificationMarker.png";
-import arrow from "../../assets/arrow.png";
-import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Perfil from "../perfil";
-import Faq from "../faq";
-
+} from 'react-native';
+import styles from './styles';
+import profileImg from '../../assets/campeao.jpg';
+import bell from '../../assets/Bell.png';
+import marker from '../../assets/NotificationMarker.png';
+import arrow from '../../assets/arrow.png';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Perfil from '../perfil';
+import Faq from '../faq';
+import Map from '../mapa';
 
 export default function Home() {
   const navigation = useNavigation();
@@ -30,8 +30,11 @@ export default function Home() {
   }
 
   function navigateToFaq({ navigation }) {
-    return (<Faq />
-      );
+    return <Faq />;
+  }
+
+  function navigateToMap({ navigation }) {
+    return <Map />;
   }
 
   function HomeScreen({ navigation }) {
@@ -43,7 +46,7 @@ export default function Home() {
             <Image style={styles.marker} source={marker} />
           </View>
           <View style={styles.presetention}>
-            <TouchableOpacity onPress={()=> navigation.navigate('Perfil')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Perfil')}>
               <Text style={styles.name}>Ola, Campeão </Text>
               <Image style={styles.imagem} source={profileImg} />
             </TouchableOpacity>
@@ -62,8 +65,10 @@ export default function Home() {
           <View style={styles.centersBox}>
             <Text style={styles.boxTitle}>Postos Disponíveis</Text>
             <View style={styles.box}>
-              <Text style={styles.boxText}>Meier 1</Text>
-              <Image style={styles.arrow} source={arrow} />
+              <TouchableOpacity onPress={() => navigation.navigate('Map')}>
+                <Text style={styles.boxText}>Meier 1</Text>
+                <Image style={styles.arrow} source={arrow} />
+              </TouchableOpacity>
             </View>
             <View style={styles.box}>
               <Text style={styles.boxText}>Meier 2</Text>
@@ -80,10 +85,40 @@ export default function Home() {
   }
   return (
     <NavigationContainer independent={true}>
-      <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Perfil" component={navigateToPerfil} />
-        <Tab.Screen name="Faq" component={navigateToFaq} />
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+            if (route.name === 'Home') {
+              iconName = 'home';
+              color = focused ? 'red' : 'black';
+            }
+            if (route.name === 'Map') {
+              iconName = 'map';
+              color = focused ? 'red' : 'black';
+            }
+            if (route.name === 'Faq') {
+              iconName ='help-circle' ;
+              color = focused ? 'red' : 'black';
+            }
+            if (route.name === 'Perfil') {
+              iconName = 'user';
+              color = focused ? 'red' : 'black';
+            }
+
+            return <Feather name={iconName} size={15} color={color} />;
+          },
+        })}
+        tabBarOptions={{
+          activeTintColor: 'tomato',
+          inactiveTintColor: 'gray',
+          showLabel: false,
+        }}
+      >
+        <Tab.Screen name='Home' component={HomeScreen} />
+        <Tab.Screen name='Perfil' component={navigateToPerfil} />
+        <Tab.Screen name='Faq' component={navigateToFaq} />
+        <Tab.Screen name='Map' component={navigateToMap} />
       </Tab.Navigator>
     </NavigationContainer>
   );
