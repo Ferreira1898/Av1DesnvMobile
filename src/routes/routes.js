@@ -4,14 +4,14 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 const AppStack = createStackNavigator();
 
-import cadastro from './pages/cadastro';
-import login from './pages/login';
-import Perfil from './pages/perfil';
-import Faq from './pages/faq';
-import retrieve from './pages/retrieve';
-import send from './pages/retrieve/send.js';
-import home from './pages/home';
-import Map from './pages/mapa';
+import cadastro from '../pages/cadastro';
+import login from '../pages/login';
+import Perfil from '../pages/perfil';
+import Faq from '../pages/faq';
+import retrieve from '../pages/retrieve';
+import send from '../pages/retrieve/send.js';
+import home from '../pages/home';
+import Map from '../pages/mapa';
 
 export default function Routes() {
   return (

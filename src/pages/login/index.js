@@ -5,6 +5,10 @@ import { useNavigation } from '@react-navigation/native';
 import { Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
 import styles from './styles';
 import logoImg from '../../assets/logo3.png';
+import api from '../../services/api';
+import PropTypes from 'prop-types';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import LoginComponent from '../../components/loginComponent/loginComponent.js';
 
 export default function Login() {
   const navigation = useNavigation();
@@ -21,6 +25,23 @@ export default function Login() {
 
   function navigateToRetrieve() {
     navigation.navigate('retrieve');
+  }
+
+  async function handleSignInPress() {
+    if (nome.length === 0 || senha.length === 0) {
+      alert('Preencha usuário e senha para continuar!');
+    } else {
+      try {
+        const response = await api.post('/sessions', {
+          cellphone: nome,
+          password: senha,
+        });
+        await AsyncStorage.setItem('@CalenVac:token', response.data.token);
+        navigateToHome();
+      } catch (_err) {
+        alert('Houve um problema com o login, verifique suas credenciais!');
+      }
+    }
   }
 
   return (
@@ -41,10 +62,10 @@ export default function Login() {
         <TextInput
           placeholder='Senha  '
           style={styles.textInput}
-          onChangeText={(text) => setNome(text)}
+          onChangeText={(text) => setSenha(text)}
         />
 
-        <TouchableOpacity style={styles.btnLogin} onPress={navigateToHome}>
+        <TouchableOpacity style={styles.btnLogin} onPress={handleSignInPress}>
           <Text style={styles.textoLogin}>Login</Text>
         </TouchableOpacity>
         <TouchableOpacity

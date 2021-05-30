@@ -7,11 +7,13 @@ import styles from './styles';
 import { color } from 'react-native-reanimated';
 import iconInfo from '../../assets/info-icon.jpeg'
 import iconHelp from '../../assets/help.png'
+import api from '../../services/api';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Cadastro() {
   const navigation = useNavigation();
   const [nome, setNome] = useState('');
-  const [email, setEmail] = useState('');
+  const [idade, setIdade] = useState('');
   const [senha, setSenha] = useState('');
   const [endereco, setEndereco] = useState('');
   const [genero, setGenero] = useState('');
@@ -20,6 +22,28 @@ export default function Cadastro() {
   function navigateToLogin() {
     navigation.navigate('login');
   }
+  async function handleSignUnPress() {
+    if (nome.length === 0 || senha.length === 0) {
+      alert('Preencha usuário e senha para continuar!');
+    } else {
+      try {
+        const response = await api.post('/users', {
+          cellphone: telefone,
+          password: senha,
+          name:nome,
+          age:idade,
+          address:endereco,
+          gender:genero,
+          profession:profissao
+        });
+        alert('Conta criada com sucesso ' +nome);
+        navigateToLogin();
+      } catch (_err) {
+        alert('Houve um problema com o cadastro, verifique suas credenciais!');
+      }
+    }
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.InnerContainer}>
@@ -42,7 +66,7 @@ export default function Cadastro() {
             <Text style={styles.textoH}>Idade: </Text>
             <TextInput
               style={styles.textInput}
-              onChangeText={(text) => setNome(text)}
+              onChangeText={(text) => setIdade(text)}
             />
             <Image style={styles.iconHelp} source={iconHelp} />
           </View>
@@ -86,13 +110,13 @@ export default function Cadastro() {
             <TextInput
               placeholder='(00) 00000-0000  '
               style={styles.textInput}
-              onChangeText={(text) => setEmail(text)}
+              onChangeText={(text) => setTelefone(text)}
             />
             <Image style={styles.iconHelp} source={iconHelp} />
           </View>
         </View>
 
-        <TouchableOpacity style={styles.btnCadastro} onPress={navigateToLogin}>
+        <TouchableOpacity style={styles.btnCadastro} onPress={handleSignUnPress}>
           <Text style={styles.texto}>Cadastrar</Text>
         </TouchableOpacity>
 
