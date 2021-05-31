@@ -9,18 +9,19 @@ import api from '../../services/api';
 import PropTypes from 'prop-types';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import LoginComponent from '../../components/loginComponent/loginComponent.js';
+import { faqModel } from '../../data/user/userModel.js';
 
 export default function Login() {
   const navigation = useNavigation();
-  const [nome, setNome] = useState('');
+  const [login, setLogin] = useState('');
   const [senha, setSenha] = useState('');
 
   function navigateToCadastro() {
     navigation.navigate('cadastro');
   }
 
-  function navigateToHome() {
-    navigation.navigate('home');
+  function navigateToHome({ data }) {
+    navigation.navigate('home',{data:data[0]} );
   }
 
   function navigateToRetrieve() {
@@ -28,19 +29,34 @@ export default function Login() {
   }
 
   async function handleSignInPress() {
-    if (nome.length === 0 || senha.length === 0) {
+    if (login.length === 0 || senha.length === 0) {
       alert('Preencha usuário e senha para continuar!');
     } else {
       try {
         const response = await api.post('/sessions', {
-          cellphone: nome,
+          cellphone: login,
           password: senha,
         });
+
         await AsyncStorage.setItem('@CalenVac:token', response.data.token);
-        navigateToHome();
+
+        getData();
       } catch (_err) {
         alert('Houve um problema com o login, verifique suas credenciais!');
       }
+    }
+  }
+
+  async function getData() {
+    try {
+      const response = await api.post('/users/profile', {
+        cellphone: login,
+      });
+      const jsonValue = JSON.stringify(response.data[0])
+      await AsyncStorage.setItem('@CalenVac:profile', jsonValue);
+      navigateToHome(response);
+    } catch (_err) {
+      alert('Houve um problema com os dados, verifique suas credenciais!');
     }
   }
 
@@ -54,13 +70,13 @@ export default function Login() {
         <Image style={styles.imagem} source={logoImg} />
         <Text style={styles.texto}>Login: </Text>
         <TextInput
-          placeholder='Nome  '
+          placeholder='Celular:'
           style={styles.textInput}
-          onChangeText={(text) => setNome(text)}
+          onChangeText={(text) => setLogin(text)}
         />
         <Text style={styles.texto}>Senha: </Text>
         <TextInput
-          placeholder='Senha  '
+          placeholder='Senha'
           style={styles.textInput}
           onChangeText={(text) => setSenha(text)}
         />

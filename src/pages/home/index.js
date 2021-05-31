@@ -21,23 +21,24 @@ import Perfil from '../perfil';
 import Faq from '../faq';
 import Map from '../mapa';
 
-export default function Home() {
+export default function Home({ route }) {
+  const { data } = route.params;
   const navigation = useNavigation();
   const Tab = createBottomTabNavigator();
 
-  function navigateToPerfil({ navigation }) {
-    return <Perfil />;
+  function navigateToPerfil({ route, navigation }) {
+    return <Perfil route={route} />;
   }
 
-  function navigateToFaq({ navigation }) {
+  function navigateToFaq({ route, navigation }) {
     return <Faq />;
   }
 
-  function navigateToMap({ navigation }) {
+  function navigateToMap({ route, navigation }) {
     return <Map />;
   }
 
-  function HomeScreen({ navigation }) {
+  function HomeScreen({ route, navigation }) {
     return (
       <View style={styles.container}>
         <View style={styles.upperContainer}>
@@ -46,8 +47,8 @@ export default function Home() {
             <Image style={styles.marker} source={marker} />
           </View>
           <View style={styles.presetention}>
-            <TouchableOpacity onPress={() => navigation.navigate('Perfil')}>
-              <Text style={styles.name}>Ola, Campeão </Text>
+            <TouchableOpacity onPress={() => navigation.navigate('Perfil',{params:{data:route}})}>
+              <Text style={styles.name}>{data.name} </Text>
               <Image style={styles.imagem} source={profileImg} />
             </TouchableOpacity>
             <View style={styles.line}></View>
@@ -98,7 +99,7 @@ export default function Home() {
               color = focused ? 'red' : 'black';
             }
             if (route.name === 'Faq') {
-              iconName ='help-circle' ;
+              iconName = 'help-circle';
               color = focused ? 'red' : 'black';
             }
             if (route.name === 'Perfil') {
@@ -115,10 +116,10 @@ export default function Home() {
           showLabel: false,
         }}
       >
-        <Tab.Screen name='Home' component={HomeScreen} />
-        <Tab.Screen name='Perfil' component={navigateToPerfil} />
-        <Tab.Screen name='Faq' component={navigateToFaq} />
-        <Tab.Screen name='Map' component={navigateToMap} />
+        <Tab.Screen name='Home' component={HomeScreen} initialParams={{ route:data }}/>
+        <Tab.Screen name='Perfil' component={navigateToPerfil} initialParams={{ route:data }} />
+        <Tab.Screen name='Faq' component={navigateToFaq} initialParams={{ route:data }}/>
+        <Tab.Screen name='Map' component={navigateToMap} initialParams={{ route:data }}/>
       </Tab.Navigator>
     </NavigationContainer>
   );

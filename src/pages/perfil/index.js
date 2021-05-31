@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
@@ -13,7 +13,9 @@ import {
 import logoImg from '../../assets/campeao.jpg';
 import styles from './styles';
 
-export function Perfil() {
+export default function Perfil({ route }) {
+  const data = route.params.route;
+
   const navigation = useNavigation();
 
   return (
@@ -29,16 +31,16 @@ export function Perfil() {
         </TouchableOpacity>
         <Image style={styles.imagem} source={logoImg} />
         <View style={styles.headerPerfil}>
-          <Text style={styles.textoPerfil}>Nome: Falcão</Text>
-          <Text style={styles.textoPerfil}>Idade: 66 anos</Text>
-          <Text style={styles.textoPerfil}>Gênero: Masculino</Text>
+          <Text style={styles.textoPerfil}>Nome: {data.name}</Text>
+          <Text style={styles.textoPerfil}>Idade: {data.age}</Text>
+          <Text style={styles.textoPerfil}>Gênero: {data.gender}</Text>
           <Text style={styles.textoPerfil}>
-            Profissão: Motorista de Caminhão
+            Profissão: {data.profession}
           </Text>
         </View>
         <View style={styles.corpo}>
           <Text style={styles.textoCorpo}>
-            Endereço: Rua Guaratingueta n°55{' '}
+            Endereço: {data.address}
           </Text>
           <Text style={styles.textoCorpo}>Bairro: Ramos</Text>
           <Text style={styles.textoCorpo}>Municipio: Rio de Janeiro</Text>
@@ -58,4 +60,3 @@ export function Perfil() {
     </View>
   );
 }
-export default Perfil;
