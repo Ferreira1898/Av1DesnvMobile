@@ -4,7 +4,7 @@ import Constants from 'expo-constants';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#6C63FF',
+    backgroundColor: '#2c154f',
     alignItems: 'center',
     justifyContent: 'center',
     width:'100%',
@@ -74,7 +74,7 @@ export default StyleSheet.create({
     width: '50%',
     height: 40,
     width: 300,
-    backgroundColor: '#6C63FF',
+    backgroundColor: '#2c154f',
     borderColor: '#6C63FF',
     borderWidth: 1,
     borderRadius: 20,
