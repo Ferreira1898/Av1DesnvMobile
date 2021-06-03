@@ -51,7 +51,7 @@ export default StyleSheet.create({
   info: {
     fontFamily: 'Roboto',
     fontWeight: 'bold',
-    fontSize: 16,
+    fontSize: 14,
     color: '#6C63FF',
     marginBottom: '1%',
   },

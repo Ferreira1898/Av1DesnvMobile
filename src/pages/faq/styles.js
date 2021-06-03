@@ -4,9 +4,10 @@ import Constants from 'expo-constants';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#6C63FF',
+    backgroundColor: '#2c154f',
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 10,
   },
   InnerContainer: {
     flex: 1,
@@ -20,12 +21,13 @@ export default StyleSheet.create({
   },
   header: {
     position: 'absolute',
-    top: 160,
+    top: '35%',
   },
   imagem: {
     marginRight: 5,
     resizeMode: 'contain',
     bottom: 10,
+    left: '30%'
   },
   tituloPerfil: {
     fontSize: 18,
@@ -34,7 +36,7 @@ export default StyleSheet.create({
     borderWidth: 1,
     borderColor: '#6C63FF',
     borderRadius: 15,
-    paddingHorizontal: 40,
+    paddingHorizontal: '20%',
     paddingVertical: 10,
     justifyContent: 'center',
     alignItems: 'center',
@@ -93,7 +95,7 @@ export default StyleSheet.create({
     position: 'absolute',
     bottom: 30,
     right: 30,
-    height: 60,
-    width: 50,
+    height: '7%',
+    width: '7%',
   },
 });
