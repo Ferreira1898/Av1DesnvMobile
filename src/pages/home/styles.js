@@ -10,7 +10,7 @@ export default StyleSheet.create({
   upperContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#6C63FF',
+    backgroundColor: '#2c154f',
     height: '35%',
     width: '100%',
   },
@@ -34,7 +34,6 @@ export default StyleSheet.create({
   name: {
     fontFamily: 'Roboto',
     fontSize: 18,
-    padding: 10,
     color: '#FFF',
     bottom: 10,
   },
@@ -83,7 +82,8 @@ export default StyleSheet.create({
   mainBoxText: {
     fontFamily: 'Roboto',
     fontSize: 18,
-    color: '#6C6AE2',
+    color: '#252071',
+    fontWeight: 'bold'
   },
   centersBox: {
     top: '5%',

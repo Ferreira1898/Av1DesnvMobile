@@ -48,7 +48,7 @@ export default function Home({ route }) {
           </View>
           <View style={styles.presetention}>
             <TouchableOpacity onPress={() => navigation.navigate('Perfil',{params:{data:route}})}>
-              <Text style={styles.name}>{data.name} </Text>
+              <Text style={styles.name}>Olá, {data.name} </Text>
               <Image style={styles.imagem} source={profileImg} />
             </TouchableOpacity>
             <View style={styles.line}></View>
@@ -60,23 +60,23 @@ export default function Home({ route }) {
           </Text>
           <View style={styles.mainBox}>
             <Text style={styles.mainBoxText}>
-              Dia 8 de Maio até Dia 18 de Maio
+              Dia 8 de MAIO até Dia 18 de MAIO
             </Text>
           </View>
           <View style={styles.centersBox}>
             <Text style={styles.boxTitle}>Postos Disponíveis</Text>
             <View style={styles.box}>
               <TouchableOpacity onPress={() => navigation.navigate('Map')}>
-                <Text style={styles.boxText}>Meier 1</Text>
+                <Text style={styles.boxText}>MÉIER 1</Text>
                 <Image style={styles.arrow} source={arrow} />
               </TouchableOpacity>
             </View>
             <View style={styles.box}>
-              <Text style={styles.boxText}>Meier 2</Text>
+              <Text style={styles.boxText}>MÉIER 2</Text>
               <Image style={styles.arrow} source={arrow} />
             </View>
             <View style={styles.box}>
-              <Text style={styles.boxText}>Meier 3</Text>
+              <Text style={styles.boxText}>MÉIER 3</Text>
               <Image style={styles.arrow} source={arrow} />
             </View>
           </View>

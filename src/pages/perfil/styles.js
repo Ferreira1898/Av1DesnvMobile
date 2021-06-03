@@ -4,7 +4,7 @@ import Constants from 'expo-constants';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#6C63FF',
+    backgroundColor: '#2c154f',
     alignItems: 'center',
     justifyContent: 'center',
     padding: 10,
@@ -77,11 +77,12 @@ export default StyleSheet.create({
     fontSize: 14,
     alignSelf: 'center',
     textAlignVertical: 'center',
+    fontWeight: 'bold',
   },
   texto: {
     fontFamily: 'Roboto',
     paddingTop: 15,
-    color: '#6C63FF',
+    color: '#2c154f',
     width: '80%',
     height: 40,
     fontSize: 16,

@@ -53,7 +53,7 @@ export default function Perfil({ route }) {
             style={styles.detailsFAQButton}
             onPress={() => navigation.navigate('Faq')}
           >
-            <Text style={styles.detailsFAQButtonText}>FAQ?</Text>
+           
           </TouchableOpacity>
         </View>
       </View>
