@@ -11,13 +11,13 @@ export default StyleSheet.create({
   },
   InnerContainer: {
     flex: 1,
+    width: '100%',
+    maxHeight: '90%',
+    bottom: '5%',
     backgroundColor: '#FFF',
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 16,
-    width: '95%',
-    maxHeight: '90%',
-    bottom: 30,
   },
   header: {
     position: 'absolute',
