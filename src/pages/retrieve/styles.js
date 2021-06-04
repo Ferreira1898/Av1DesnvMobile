@@ -4,11 +4,10 @@ import Constants from 'expo-constants';
 export default StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#6C63FF',
+      backgroundColor: '#2c154f',
       alignItems: 'center',
       justifyContent: 'center',
       padding:10,
-      
     },
     InnerContainer: {
         flex: 1,
@@ -60,22 +59,22 @@ export default StyleSheet.create({
     box:{
         alignItems :'flex-start'
     },
-  textInput:{
-        marginTop:5,
-        width:300,
-        height:40,
-        backgroundColor:'#FFF',
-        borderColor:'#6C63FF',
-        borderWidth: 1,
-        borderRadius:20,
-        paddingLeft:10,
-        marginBottom:20,
-     },
+    textInput:{
+            marginTop:5,
+            width:300,
+            height:40,
+            backgroundColor:'#FFF',
+            borderColor:'#6C63FF',
+            borderWidth: 1,
+            borderRadius:20,
+            paddingLeft:10,
+            marginBottom:20,
+        },
      btnLogin:{
         width:'50%',
         height:40,
         width:300,
-        backgroundColor:'#6C63FF',
+        backgroundColor:'#2c154f',
         borderColor:'#6C63FF',
         borderWidth: 1,
         borderRadius:20,

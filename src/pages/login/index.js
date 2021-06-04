@@ -65,7 +65,7 @@ export default function Login() {
       <View style={styles.InnerContainer}>
         <StatusBar hidden />
         <View style={styles.header}>
-          <Text style={styles.tituloLogin}>CalenVac</Text>
+          <Text style={styles.tituloLogin} >CalenVac</Text>
         </View>
         <Image style={styles.imagem} source={logoImg} />
         <Text style={styles.texto}>Login: </Text>
@@ -76,6 +76,8 @@ export default function Login() {
         />
         <Text style={styles.texto}>Senha: </Text>
         <TextInput
+          secureTextEntry={true}
+          
           placeholder='Senha'
           style={styles.textInput}
           onChangeText={(text) => setSenha(text)}

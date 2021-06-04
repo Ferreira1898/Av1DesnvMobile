@@ -12,7 +12,7 @@ const url = (typeof manifest.packagerOpts === `object`) && manifest.packagerOpts
   */
 
 const api = axios.create({
-  baseURL: 'http://25f6ee733986.ngrok.io', 
+  baseURL: 'https://40306e59aa3e.ngrok.io', 
   //Se for testar utilizando emulador, inicie o ngrok na api e troque o link acima pelo do ngrok
 });
 

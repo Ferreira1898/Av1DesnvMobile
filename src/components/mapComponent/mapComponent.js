@@ -38,8 +38,8 @@ export function MapComponent() {
     >
       <Marker
         coordinate={{
-          latitude: -22.743792929481362,
-          longitude: -43.46670102358521,
+          latitude: -22.900927478124363,
+          longitude: -43.28089284286589,
         }}
         title='Você'
       />

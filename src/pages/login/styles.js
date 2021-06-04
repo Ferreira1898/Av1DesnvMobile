@@ -24,12 +24,10 @@ export default StyleSheet.create({
     height: 40,
     borderRadius: 8,
     backgroundColor: '#FFF',
-    justifyContent: 'center',
     fontSize: 24,
     color: '#6C63FF',
     fontWeight: 'bold',
-    marginTop: -10,
-    paddingLeft: 30,
+    marginLeft: '25%',
   },
   header: {
     width:'100%',
