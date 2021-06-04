@@ -4,7 +4,7 @@ import Constants from 'expo-constants';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#6C63FF',
+    backgroundColor: '#2c154f',
     alignItems: 'center',
     justifyContent: 'center',
     height: '100%',
@@ -20,8 +20,8 @@ export default StyleSheet.create({
     borderRadius: 15,
     maxHeight: '98%',
     width: '95%',
+    display: 'flex',
   },
-
   header: {
     borderWidth: 2,
     borderColor: '#6C63FF',
@@ -31,7 +31,10 @@ export default StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 10,
     paddingHorizontal: 80,
-    bottom: 15,
+    marginTop: '10%',
+    display: 'flex',
+    width: '95%',
+    bottom: '3%',
   },
   textHeader: {
     fontSize: 24,
@@ -44,7 +47,7 @@ export default StyleSheet.create({
     top: 12,
   },
   textInput: {
-    width: 220,
+    width: '65%',
     height: 40,
     backgroundColor: '#FFF',
     borderColor: '#6C63FF',
@@ -53,7 +56,6 @@ export default StyleSheet.create({
     marginTop: 2,
     paddingLeft: 10,
     marginBottom: 20,
-    left: 20,
   },
   btnCadastro: {
     borderColor:'#6C63FF',
@@ -71,7 +73,6 @@ export default StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
   },
-
   detailsButton: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -90,12 +91,13 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'flex-start',
     right: 20,
+    paddingLeft: '5%',
   },
 
   imgInfo: {
     width: 30,
     height: 30,
-    marginLeft: 20,
+    marginLeft: '10%',
   },
 
   registerBox: {
@@ -103,7 +105,7 @@ export default StyleSheet.create({
   },
 
   iconHelp: {
-    left: 320,
+    left: '110%',
     top: 12,
     position: 'absolute',
   },

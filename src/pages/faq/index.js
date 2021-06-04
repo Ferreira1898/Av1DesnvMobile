@@ -38,8 +38,6 @@ export function Faq() {
             style={styles.detailsButton}
             onPress={navigateToPerfil}
           >
-            <Text style={styles.detailsButtonText}>Voltar</Text>
-            <Feather name='arrow-right' size={16} color='#6C63FF' />
           </TouchableOpacity>
           <Image style={styles.imagem} source={logoImg} />
           <Text style={styles.tituloPerfil}>Perguntas Frequentes</Text>

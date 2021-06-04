@@ -44,14 +44,15 @@ export default StyleSheet.create({
   infoTitle: {
     fontFamily: 'Roboto',
     fontSize: 18,
-    color: '#6C63FF',
+    fontWeight: 'bold',
+    color: '#2c154f',
     marginBottom: '1%',
     marginTop: '2%',
   },
   info: {
     fontFamily: 'Roboto',
     fontWeight: 'bold',
-    fontSize: 16,
+    fontSize: 14,
     color: '#6C63FF',
     marginBottom: '1%',
   },

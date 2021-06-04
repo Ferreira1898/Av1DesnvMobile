@@ -12,7 +12,7 @@ export function Map() {
       </View>
       <View style={styles.innerContainer}>
         <ScrollView style={styles.infoContainer}>
-          <Text style={styles.title}>Unidade Meier 1</Text>
+          <Text style={styles.title}>Unidade MÉIER I</Text>
           <View style={styles.infoBox}>
             <Text style={styles.infoTitle}>CAP   CNEES</Text>
             <Text style={styles.info}>3.1      6664154</Text>
